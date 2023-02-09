@@ -4,7 +4,7 @@ import { useAuth } from "react-oidc-context";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 
-import { Route, Switch } from "react-router-dom";
+import { Route } from "wouter";
 
 import Header from "./components/header";
 import Loading from "./components/loading";
