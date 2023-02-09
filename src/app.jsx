@@ -4,7 +4,7 @@ import { useAuth } from "react-oidc-context";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 
-import { Route, Switch } from "react-router-dom";
+import { Route } from "wouter";
 
 import Header from "./components/header";
 import Loading from "./components/loading";
@@ -38,19 +38,9 @@ function App() {
     <Container className="p-3">
       <Header />
       <Container className="pMain">
-
-        <Route exact path="/">
-          <Splash />
-        </Route>
-
-        <Route path="/tokens">
-          <Tokens />
-        </Route>
-        
-        <Route exact path="/config">
-          <OidcConfig />
-        </Route>
-
+        <Route path="/"> <Splash /> </Route>
+        <Route path="/tokens"> <Tokens /> </Route>
+        <Route path="/config"> <OidcConfig /> </Route>
       </Container>
     </Container>
   );

@@ -6,7 +6,7 @@ import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 
 import Config from "../config/config";
 
