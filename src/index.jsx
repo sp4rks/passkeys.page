@@ -1,21 +1,29 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./app.jsx";
-import { HelmetProvider } from 'react-helmet-async';
+import ReactDOM from "react-dom/client";
 
-/**
-* Root of react site 
-*
-* Imports Helment provider for the page head
-* And App which defines the content and navigation
-*/
+import { AuthProvider } from "react-oidc-context";
+import { Container } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
+import { BrowserRouter, Route } from "react-router-dom";
 
-// Render the site https://reactjs.org/docs/react-dom.html#render
-ReactDOM.render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
-  </React.StrictMode>,
+import App from "./app"
+
+
+import Config from "./config/config";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.css';
+
+
+const root = ReactDOM.createRoot(
   document.getElementById("root")
+);
+
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <AuthProvider {...Config.oidc}>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );
