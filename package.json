@@ -19,7 +19,8 @@
     "react-json-pretty": "^2.2.0",
     "jwt-decode": "^3.1.2",
     "bootstrap": "^5.2.3",
-    "oidc-client-ts": "^2.2.1"
+    "oidc-client-ts": "^2.2.1",
+    "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
     "vite": "^4.0.0"
