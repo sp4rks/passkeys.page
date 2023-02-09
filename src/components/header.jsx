@@ -31,12 +31,14 @@ function Header() {
 
     if (auth.isAuthenticated) {
       return (
-        <div>
-          <NavDropdown title={auth.user.profile.username}>
-            <NavDropdown.Item href={`https://apps.pingone.asia/${Config.envId}/myaccount/`} target="_blank">Manage Profile</NavDropdown.Item>
-            <NavDropdown.Item onClick={signout}>Sign out</NavDropdown.Item>
-          </NavDropdown>
-        </div>
+        <span>
+          <div>
+            <NavDropdown title={auth.user.profile.username}>
+              <NavDropdown.Item href={`https://apps.pingone.asia/${Config.envId}/myaccount/`} target="_blank">Manage Profile</NavDropdown.Item>
+              <NavDropdown.Item onClick={signout}>Sign out</NavDropdown.Item>
+            </NavDropdown>
+          </div>
+        </span>
       );
     } else {
       return (
@@ -46,6 +48,12 @@ function Header() {
       );
     }
 
+  }
+  
+  function Avatar() {
+    if (auth.isAuthenticated && auth.user.profile.avatar) {
+      return(<img height="46px" src={auth.user.profile.avatar} />);
+    }
   }
   
   return (
@@ -67,6 +75,7 @@ function Header() {
             <Link href="/config" className="nav-link">Config</Link>
           </Nav>
           <Nav>
+            <Avatar />
             <User />
           </Nav>          
         </Navbar.Collapse>
