@@ -8,15 +8,15 @@ function onSigninCallback () {
 
 const Config = {
   oidc: {
-    authority: "https://auth.pingone.asia/83997d85-6acc-4093-b414-da3787662a7f/as",
-    client_id: "c5508f85-3cf0-4555-b1b9-35a5650fb323",
+    authority: "https://auth.pingone.asia/21be67a7-c745-4934-b6a4-6a35c918ce6a/as",
+    client_id: "96024a44-b9a8-4d1b-9757-9459397c7fdb",
     redirect_uri: "https://apac-spa.glitch.me/",
     scope: "openid profile",
     skipUserInfo: true,
     onSigninCallback: onSigninCallback
   },
   logoUrl: "https://apac-spa.s3.ap-southeast-2.amazonaws.com/ping.png",
-  envId: "83997d85-6acc-4093-b414-da3787662a7f",
+  envId: "21be67a7-c745-4934-b6a4-6a35c918ce6a",
   projectName: "apac-spa"
 };
 
