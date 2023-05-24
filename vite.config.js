@@ -12,6 +12,7 @@ export default defineConfig({
     port:3000,
     strictPort: true,
     hmr: {
+      overlay: false,
       clientPort: 443 // Run the websocket server on the SSL port
     }
   }
