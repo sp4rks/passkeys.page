@@ -33,7 +33,7 @@ function Splash() {
       
       <Row>
         <Col>
-          <h2>Splash!</h2>
+          <h2>Splash!!!</h2>
           <p>A simple, configurable OIDC enabled application useful in demonstrations and proofs of concept.</p>
         </Col>
       </Row>

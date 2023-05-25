@@ -71,6 +71,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            <Link href="/" className="nav-link">{process.env.ENV}</Link>
             <Link href="/" className="nav-link">Home</Link>
             <Link href="/tokens" className="nav-link">Tokens</Link>
             <Link href="/config" className="nav-link">Config</Link>
