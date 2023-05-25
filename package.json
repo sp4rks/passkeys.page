@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "serve": "react-scripts start"
+    "serve": "serve -s build"
   },
   "dependencies": {
     "react": "^18.2.0",
