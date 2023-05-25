@@ -14,12 +14,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
 
 
-if (process.env.ENV == "DEV") {
-  console.log('Starting Dev!');
-} else {
-  console.log('Starting Prod!');
-}
-
 const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
