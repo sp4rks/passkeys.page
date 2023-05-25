@@ -14,9 +14,9 @@ function Header() {
 
   const auth = useAuth();
   
-  /*function signin() {
-    auth.signinRedirect({acr_values:"AdaptiveMFA"});
-  }*/
+  function register() {
+    auth.signinRedirect({acr_values:"ab179464dbc48ebb21f6589211d74c41"});
+  }
   
   function signin() {
     auth.signinRedirect();
@@ -43,6 +43,7 @@ function Header() {
     } else {
       return (
         <div>
+          <Button className="pNavButton" onClick={register}>Register</Button>
           <Button className="pNavButton" onClick={signin}>Sign In</Button>
         </div>
       );
