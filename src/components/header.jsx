@@ -19,6 +19,10 @@ function Header() {
     auth.signinRedirect({acr_values:"ab179464dbc48ebb21f6589211d74c41"});
   }
   
+  function autofill() {
+    auth.signinRedirect({acr_values:"d797638e44ab14ce1e2b95e2cf57a8ce"});
+  }
+  
   function signin() {
     auth.signinRedirect();
   }
@@ -46,6 +50,7 @@ function Header() {
         <div>
           <Button className="pNavButton" onClick={register}>Register</Button>
           <Button className="pNavButton" onClick={signin}>Sign In</Button>
+          <Button className="pNavButton" onClick={autofill}>Autofill</Button>
         </div>
       );
     }
