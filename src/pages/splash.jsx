@@ -33,8 +33,7 @@ function Splash() {
       
       <Row>
         <Col>
-          <h2>Splash!!!</h2>
-          <p>A simple, configurable OIDC enabled application useful in demonstrations and proofs of concept.</p>
+          <img src="https://cdn.glitch.global/8ce02794-cb6c-4412-941c-3e7e9fa8c222/splash?v=1690886916339" style={{"display": "block", "margin-left": "auto", "margin-right": "auto"}}/>
         </Col>
       </Row>
 
