@@ -24,7 +24,7 @@ function Header() {
   }
   
   function signin() {
-    auth.signinRedirect();
+    auth.signinRedirect({acr_values:"0a9fe044316fd9e885a65de362dbb825"});
   }
   
   function signout() {
