@@ -24,7 +24,7 @@ function Header() {
   }
   
   function signin() {
-    auth.signinRedirect({acr_values:"0a9fe044316fd9e885a65de362dbb825"});
+    auth.signinRedirect();
   }
   
   function signout() {
@@ -48,9 +48,7 @@ function Header() {
     } else {
       return (
         <div>
-          <Button className="pNavButton" onClick={register}>Register</Button>
           <Button className="pNavButton" onClick={signin}>Sign In</Button>
-          <Button className="pNavButton" onClick={autofill}>Autofill</Button>
         </div>
       );
     }
