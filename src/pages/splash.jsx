@@ -33,7 +33,7 @@ function Splash() {
       
       <Row>
         <Col>
-          <img src="https://cdn.glitch.global/8ce02794-cb6c-4412-941c-3e7e9fa8c222/splash?v=1690886916339" style={{"display": "block", "margin-left": "auto", "margin-right": "auto"}}/>
+          <img src="https://cdn.glitch.global/8ce02794-cb6c-4412-941c-3e7e9fa8c222/splash?v=1690886916339" style={{"width": "100%", "display": "block", "margin-left": "auto", "margin-right": "auto"}}/>
         </Col>
       </Row>
 
