@@ -24,7 +24,7 @@ function Header() {
   }
   
   function signin() {
-    auth.signinRedirect({acr_values:"7f3e8b28174a10a6ecd0d9f65927e1be"});
+    auth.signinRedirect({acr_values:"1d5741ccec4b0970b6b83fc161c40056"});
   }
   
   function signout() {
