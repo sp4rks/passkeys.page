@@ -58,11 +58,18 @@ div.pLight {
   background-color: white;
   padding: 20px;
   height: 80vh;
+  text-align: right;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 button.pJumboButton {
   height: 4em;
-  width: 50%;
+  /*width: 50%;*/
   font-size: 1.25em;
   background-color: white;
   border: 2px;
@@ -73,7 +80,7 @@ button.pJumboButton {
 
 button.pJumboButton:hover {
   height: 4em;
-  width: 50%;
+  /*width: 50%;*/
   font-size: 1.25em;
   background-color: #505D68;
   border: 2px;
@@ -82,14 +89,20 @@ button.pJumboButton:hover {
   color: white;
 }
 
-
 button.pJumboButton:active {
   height: 4em;
-  width: 50%;
+  /*width: 50%;*/
   font-size: 1.25em;
   background-color: #505D68 !important;
   border: 2px;
   border-style: solid;
   border-color: #505D68 !important;
   color: white;
+}
+
+.pMiddle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
