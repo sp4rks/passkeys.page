@@ -16,7 +16,7 @@ function SignOn() {
   const auth = useAuth();
   
   function signon() {
-    auth.signinRedirect({acr_values:"8b5b60cf2699df87f9181ebb873725a7"});
+    auth.signinRedirect();
   }
   
   if (auth.isAuthenticated) {
@@ -25,47 +25,27 @@ function SignOn() {
     const decodedAccessToken = jwt_decode(auth.user.access_token);
     
     return (
-      <span>
-
-        <Row>
-          <Col>
-            <h2>Token Details</h2>
-          </Col>
+      <div className="pLight">
+        
+        <Row sm={12}>
+          <h1>All Signed In!</h1>
+          <h5 className="text-muted">{decodedIdToken.username}</h5>
         </Row>
 
-        <Row>
-          <Col md={6}>
-            <h4>ID Token</h4>
-            <JSONPretty
-              data={decodedIdToken}
-              theme={JSONTheme}
-              style={{fontSize: ".95em"}}
-            />
-          </Col>
-          
-          <Col md={6}>
-            <h4>Access Token</h4>
-            <JSONPretty
-              data={decodedAccessToken}
-              theme={JSONTheme}
-              style={{fontSize: ".95em"}}
-            />
-          </Col>
+        <Row sm={12} className="pMiddle">
+          <div>
+            <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
+          </div> 
+        </Row>
 
-          <Col md={12}>
-            <h4>Raw Access Token</h4>
-            <p className="text-muted pRawToken">{auth.user.access_token}</p>
-          </Col>
-
-        </Row>    
-
-      </span>
+      </div>
     );
     
   } else {
     
     return (
       <div className="pLight">
+        
         <Row sm={12}>
           <h1>Let's Get Started</h1>
           <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
