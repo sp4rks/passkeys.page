@@ -45,7 +45,7 @@ function App() {
           <Row>
             <Col sm={5}>
               <div className="pHighlight">
-                <h1>Welcome to Passkeys!</h1>
+                <h1>Introducing Passkeys</h1>
                 <p>
                   Based on FIDO standards, passkeys are a replacement for passwords that provide faster,
                   easier, and more secure sign-ins to websites and apps across a user’s devices.

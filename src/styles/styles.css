@@ -27,10 +27,11 @@ body {
   background-size: auto 100%;
   background-repeat: no-repeat;
   font-family: 'Gotham', sans-serif;
+  font-weight: light;
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 
@@ -43,16 +44,18 @@ nav.bg-dark {
 /* Page Specific Styles */
 
 div.pMain {
-  margin-top: 7%;
-  height: 60vh;
+  margin-top: 10vh;
 }
 
-dvi.
+div.row {
+  height: 100%;
+}
 
 div.pHighlight {
   color: white !important;
   background: linear-gradient(8deg, #D84332, #D6311B, #B3282D);
   padding: 20px;
+  height: 80vh;
 }
 
 div.pLight {
