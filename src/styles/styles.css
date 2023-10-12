@@ -51,13 +51,13 @@ div.pHighlight {
   color: white !important;
   background: linear-gradient(8deg, #D84332, #D6311B, #B3282D);
   padding: 20px;
-  height: 80vh;
+  height: 60vh;
 }
 
 div.pLight {
   background-color: white;
   padding: 20px;
-  height: 80vh;
+  height: 60vh;
   text-align: right;
   
   display: flex;
