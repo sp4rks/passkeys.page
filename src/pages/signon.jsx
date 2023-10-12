@@ -1,8 +1,10 @@
 import * as React from "react";
 
 import { useAuth } from "react-oidc-context";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from 'react-bootstrap/Button';
+
 import jwt_decode from "jwt-decode";
 import JSONPretty from 'react-json-pretty';
 
@@ -12,6 +14,10 @@ import JSONTheme from "../config/jsontheme";
 function SignOn() {
   
   const auth = useAuth();
+  
+  function signon() {
+    auth.signinRedirect({acr_values:"8b5b60cf2699df87f9181ebb873725a7"});
+  }
   
   if (auth.isAuthenticated) {
     
@@ -67,8 +73,8 @@ function SignOn() {
 
         <Row sm={12} className="pMiddle">
           <div>
-            <Button className="pJumboButton" >Sign On with Passkey</Button>
-          </div>
+            <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
+          </div> 
         </Row>
 
       </div>
