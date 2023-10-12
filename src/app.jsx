@@ -62,11 +62,17 @@ function App() {
             
             <Col sm={7}>
               <div className="pLight">
-                <h1>Let's Get Started</h1>
-                <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
-                <div className="pMiddle">
-                  <Button className="pJumboButton" >Sign On with Passkey</Button>
-                </div>
+                <Row sm={12}>
+                  <h1>Let's Get Started</h1>
+                  <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
+                </Row>
+                
+                <Row sm={12}>
+                  <div className="pMiddle">
+                    <Button className="pJumboButton" >Sign On with Passkey</Button>
+                  </div>
+                </Row>
+                
               </div>
             </Col>
             
