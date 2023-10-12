@@ -64,7 +64,7 @@ function App() {
               <div className="pLight">
                 <h1>Let's Get Started</h1>
                 <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
-                <Button>Sign On with a Passkey</Button>
+                <Button className="pJumboButton">Sign On with a Passkey</Button>
               </div>
             </Col>
             
