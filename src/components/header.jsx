@@ -48,7 +48,7 @@ function Header() {
     } else {
       return (
         <div>
-          <Button className="pNavButton" onClick={signin}>Sign In</Button>
+          
         </div>
       );
     }

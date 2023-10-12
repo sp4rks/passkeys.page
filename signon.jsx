@@ -10,7 +10,7 @@ import JSONPretty from 'react-json-pretty';
 import JSONTheme from "../config/jsontheme";
 
 
-function Tokens() {
+function SignOnBox() {
   
   const auth = useAuth();
   
@@ -57,26 +57,10 @@ function Tokens() {
     );
   } else {
     return (
-      <span>
 
-        <Row>
-          <Col>
-            <h2>Token Details</h2>
-            <p>Details of the id and access tokens provided by the identity server.</p>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col md={6}>
-            <h4>User Not Signed In</h4>
-            <p>Please sign in to inspect tokens.</p>
-          </Col>
-        </Row>    
-
-      </span>
     );
     
   }
 }
 
-export default Tokens;
+export default SignOnBox;
