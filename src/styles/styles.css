@@ -8,7 +8,20 @@ html,body {
 
 body {
   /*background-image: url();*/
-  background-color: #051727;
+  background-color: rgb(5, 23, 39);
   background-size: auto 100%;
   background-repeat: no-repeat;
+}
+
+
+/* Bootstrap Overrides */
+
+nav.bg-dark {
+ background-color: rgb(5, 23, 39) !important; 
+}
+
+/* Page Specific Styles */
+
+div.pMain {
+  margin-top: 70px;
 }

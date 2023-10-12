@@ -35,24 +35,15 @@ function App() {
   }
   
   return (
-    <Container className="p-3">
-      <Header />
-      <Container className="pMain">
 
+    <div className="pMain">
+      <Header />
+      <Container>
         <Route exact path="/">
           <Splash />
         </Route>
-
-        <Route path="/tokens">
-          <Tokens />
-        </Route>
-        
-        <Route exact path="/config">
-          <OidcConfig />
-        </Route>
-
       </Container>
-    </Container>
+    </div>
   );
 }
 
