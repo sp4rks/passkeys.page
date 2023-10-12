@@ -23,10 +23,10 @@ div.pMain {
 .pHighlight {
   color: white !important;
   background: linear-gradient(8deg, #D84332, #D6311B, #B3282D);
-  padding: 5px;
+  padding: 20px;
 }
 
 .pLight {
   background-color: white;
-  padding: 5px;
+  padding: 20px;
 }
