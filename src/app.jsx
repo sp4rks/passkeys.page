@@ -5,6 +5,7 @@ import { useAuth } from "react-oidc-context";
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 
 import { Route } from "wouter";
@@ -42,7 +43,9 @@ function App() {
       <Header />
       <Container>
         <Route exact path="/">
+          
           <Row>
+            
             <Col sm={5}>
               <div className="pHighlight">
                 <h1>Introducing Passkeys</h1>
@@ -56,12 +59,17 @@ function App() {
                 </p>
               </div>
             </Col>
+            
             <Col sm={7}>
               <div className="pLight">
-                <h1>Welcome to Passkeys!</h1>
+                <h1>Let's Get Started</h1>
+                <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
+                <Button>Sign On with a Passkey</Button>
               </div>
             </Col>
+            
           </Row>
+          
         </Route>
       </Container>
     </div>

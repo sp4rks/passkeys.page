@@ -47,10 +47,6 @@ div.pMain {
   margin-top: 10vh;
 }
 
-div.row {
-  height: 100%;
-}
-
 div.pHighlight {
   color: white !important;
   background: linear-gradient(8deg, #D84332, #D6311B, #B3282D);
@@ -61,4 +57,5 @@ div.pHighlight {
 div.pLight {
   background-color: white;
   padding: 20px;
+  height: 80vh;
 }
