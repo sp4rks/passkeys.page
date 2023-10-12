@@ -64,5 +64,32 @@ button.pJumboButton {
   height: 4em;
   width: 50%;
   font-size: 1.25em;
-  background-color: 
+  background-color: white;
+  border: 2px;
+  border-style: solid;
+  border-color: #505D68;
+  color: #505D68;
+}
+
+button.pJumboButton:hover {
+  height: 4em;
+  width: 50%;
+  font-size: 1.25em;
+  background-color: #505D68;
+  border: 2px;
+  border-style: solid;
+  border-color: #505D68;
+  color: white;
+}
+
+
+button.pJumboButton:active {
+  height: 4em;
+  width: 50%;
+  font-size: 1.25em;
+  background-color: #505D68 !important;
+  border: 2px;
+  border-style: solid;
+  border-color: #505D68 !important;
+  color: white;
 }
