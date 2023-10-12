@@ -15,7 +15,7 @@ const Config = {
     skipUserInfo: true,
     onSigninCallback: onSigninCallback
   },
-  logoUrl: "https://apac-spa.s3.ap-southeast-2.amazonaws.com/ping.png",
+  logoUrl: "https://cdn.glitch.global/b2c32b66-c81e-44db-add1-e0ac2a743e65/PIC-Horizontal-Logo-White.png?v=1697089517698",
   envId: "21be67a7-c745-4934-b6a4-6a35c918ce6a",
   projectName: "apac-spa"
 };

@@ -62,12 +62,12 @@ function Header() {
   }
   
   return (
-    <Navbar variant="light" bg="light">
+    <Navbar variant="dark" bg="dark" fixed="top">
       <Container>
         <Navbar.Brand href="#">
           <img
             src={Config.logoUrl}
-            height="48"
+            height="32"
             className="d-inline-block align-top"
             alt="Company Logo"
           />
