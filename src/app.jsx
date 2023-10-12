@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 
 import { useAuth } from "react-oidc-context";
-import { Container } from "react-bootstrap";
-import { Navbar } from "react-bootstrap";
+
+import Container from "react-bootstrap/Container";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 import { Route } from "wouter";
 
 import Header from "./components/header";
 import Loading from "./components/loading";
-import OidcConfig from "./pages/oidcConfig";
 import Splash from "./pages/splash";
-import Tokens from "./pages/tokens";
+
 
 function App() {
   
@@ -38,9 +40,13 @@ function App() {
 
     <div className="pMain">
       <Header />
-      <Container>
+      <Container fluid="md">
         <Route exact path="/">
-          <Splash />
+          <Row>
+            <Col className="pHighlight">
+              <h1>Welcome to Passkeys!</h1>
+            </Col>
+          </Row>
         </Route>
       </Container>
     </div>

@@ -1,11 +1,5 @@
 /* Default HTML Styles */
 
-html,body {
-  margin: 0;
-  height: 100%;
-}
-
-
 body {
   /*background-image: url();*/
   background-color: rgb(5, 23, 39);
@@ -24,4 +18,9 @@ nav.bg-dark {
 
 div.pMain {
   margin-top: 70px;
+}
+
+.pHighlight {
+  color: white !important;
+  background: linear-gradient(8deg, #D84332, #D6311B, #B3282D);
 }
