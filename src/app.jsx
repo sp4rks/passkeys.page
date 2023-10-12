@@ -40,11 +40,26 @@ function App() {
 
     <div className="pMain">
       <Header />
-      <Container fluid="md">
+      <Container>
         <Route exact path="/">
           <Row>
-            <Col className="pHighlight">
-              <h1>Welcome to Passkeys!</h1>
+            <Col sm={5}>
+              <div className="pHighlight">
+                <h1>Welcome to Passkeys!</h1>
+                <p>
+                  Based on FIDO standards, passkeys are a replacement for passwords that provide faster,
+                  easier, and more secure sign-ins to websites and apps across a user’s devices.
+                  Unlike passwords, passkeys are always strong and phishing-resistant.
+                </p>
+                <p>
+                  Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices, and even work on other devices within physical proximity.
+                </p>
+              </div>
+            </Col>
+            <Col sm={7}>
+              <div className="pLight">
+                <h1>Welcome to Passkeys!</h1>
+              </div>
             </Col>
           </Row>
         </Route>
