@@ -21,7 +21,7 @@ function DevicesBox() {
   const decodedAccessToken = jwt_decode(auth.user.access_token);
   
   useEffect(() => {
-    fetch('https://httpbin.org/ip')
+    fetch('https://api.pingone.asia/v1/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -42,7 +42,7 @@ function DevicesBox() {
       <div className="pLight">
         
         <Row sm={12}>
-          <h1>All Signed In!</h1>
+          <h1>Your Passkeys</h1>
           <h5 className="text-muted">{decodedIdToken.username}</h5>
         </Row>
 
