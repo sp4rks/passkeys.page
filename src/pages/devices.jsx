@@ -20,11 +20,8 @@ function DevicesBox() {
   const decodedIdToken = jwt_decode(auth.user.id_token);
   const decodedAccessToken = jwt_decode(auth.user.access_token);
   
-  function getDevices() {
-    setDevices(['Device 1']);
-  }
-  
-  fetch('https://httpbin.org/ip')
+  useEffect(() => {
+    fetch('https://httpbin.org/ip')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -32,16 +29,14 @@ function DevicesBox() {
       return response.json();
     })
     .then((data) => {
-      setDevices(String(data));
+      setDevices(JSON.stringify(data))
     })
     .catch((error) => {
       console.error(error);
     });
+  }, []);
 
   if (auth.isAuthenticated) {
-    
-    const decodedIdToken = jwt_decode(auth.user.id_token);
-    const decodedAccessToken = jwt_decode(auth.user.access_token);
     
     return (
       <div className="pLight">
