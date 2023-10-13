@@ -13,7 +13,7 @@ import JSONTheme from "../config/jsontheme";
 import Config from "../config/config"
 
 
-function DevicesBox() {
+function PasskeyBox() {
   
   const auth = useAuth();
   const [devices, setDevices] = useState('');
@@ -54,6 +54,10 @@ function DevicesBox() {
     });
     
   });
+  
+  function listPasskeys () {
+    
+  }
 
   if (auth.isAuthenticated) {
     
@@ -87,4 +91,4 @@ function DevicesBox() {
   }
 }
 
-export default DevicesBox;
+export default PasskeyBox;

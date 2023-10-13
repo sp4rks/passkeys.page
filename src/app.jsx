@@ -13,7 +13,7 @@ import { Route } from "wouter";
 import Header from "./components/header";
 import Loading from "./components/loading";
 import SignOnBox from "./pages/signon"
-import DevicesBox from "./pages/devices"
+import PasskeyBox from "./pages/passkeys"
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
   
   function renderRootBox () {
     if (auth.isAuthenticated) {
-      return(<DevicesBox />)
+      return(<PasskeyBox />)
     } else {
       return(<SignOnBox />)
     }
@@ -81,3 +81,7 @@ function App() {
 }
 
 export default App;
+
+
+// SHIFT FROM PER BOX RENDERING TO PER ROUTE RENDERING
+// CONTINUE PASSKEY MANAGEMENT
