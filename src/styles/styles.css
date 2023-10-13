@@ -58,10 +58,23 @@ div.pLight {
   background-color: white;
   padding: 20px;
   height: 60vh;
-  text-align: right;
-  
-
   height: 100%;
+}
+
+.pRight {
+  text-align: right;
+}
+
+.pCenter {
+  text-align: center;
+}
+
+.pMiddle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
 }
 
 button.pJumboButton {
@@ -103,10 +116,3 @@ button.pJumboButton:active {
   border-radius: 0;
 }
 
-.pMiddle {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60%;
-}

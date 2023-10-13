@@ -38,7 +38,7 @@ function SignOnBox() {
   } else {
     
     return (
-      <div className="pLight">
+      <div className="pLight pRight">
         
         <Row sm={12}>
           <h1>Let's Get Started</h1>

@@ -15,7 +15,7 @@ import JSONTheme from "../config/jsontheme";
 function DevicesBox() {
   
   const auth = useAuth();
-  const [devices, setDevices] = useState([]);
+  const [devices, setDevices] = useState('');
   
   const decodedIdToken = jwt_decode(auth.user.id_token);
   const decodedAccessToken = jwt_decode(auth.user.access_token);
@@ -24,28 +24,20 @@ function DevicesBox() {
     setDevices(['Device 1']);
   }
   
-  useEffect(() => {
-    const url = `https://api.pingone.asia/v1/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/${auth.id_token}/devices`;
-    console.log('Looking up: url');
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Device Lookup Failed');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setDevices(data);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }, []);
-  
-  function signon() {
-    auth.signinRedirect();
-  }
-  
+  fetch('https://httpbin.org/ip')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      setDevices(String(data));
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
   if (auth.isAuthenticated) {
     
     const decodedIdToken = jwt_decode(auth.user.id_token);
@@ -60,7 +52,7 @@ function DevicesBox() {
         </Row>
 
         <Row sm={12}>
-          
+          <p>{devices}</p>
         </Row>
 
       </div>
