@@ -12,17 +12,34 @@ import JSONPretty from 'react-json-pretty';
 import JSONTheme from "../config/jsontheme";
 
 
-function SignOn() {
+function DevicesBox() {
   
   const auth = useAuth();
   const [devices, setDevices] = useState([]);
+  
+  const decodedIdToken = jwt_decode(auth.user.id_token);
+  const decodedAccessToken = jwt_decode(auth.user.access_token);
   
   function getDevices() {
     setDevices(['Device 1']);
   }
   
   useEffect(() => {
-    alert('ran once');
+    const url = `https://api.pingone.asia/v1/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/${auth.id_token}/devices`;
+    console.log('Looking up: url');
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Device Lookup Failed');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setDevices(data);
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }, []);
   
   function signon() {
@@ -42,10 +59,8 @@ function SignOn() {
           <h5 className="text-muted">{decodedIdToken.username}</h5>
         </Row>
 
-        <Row sm={12} className="pMiddle">
-          <div>
-            <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
-          </div> 
+        <Row sm={12}>
+          
         </Row>
 
       </div>
@@ -66,4 +81,4 @@ function SignOn() {
   }
 }
 
-export default SignOn;
+export default DevicesBox;

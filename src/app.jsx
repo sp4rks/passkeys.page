@@ -13,6 +13,7 @@ import { Route } from "wouter";
 import Header from "./components/header";
 import Loading from "./components/loading";
 import SignOnBox from "./pages/signon"
+import DevicesBox from "./pages/devices"
 
 
 function App() {
@@ -24,7 +25,6 @@ function App() {
   }
   
   if (auth.error) {
-    
     if (auth.error.message == "No matching state found in storage") {
       return (<Loading />);
     } else {
@@ -34,6 +34,14 @@ function App() {
           <h3>{auth.error.message}</h3>
         </div>
       );      
+    }
+  }
+  
+  function renderRootBox () {
+    if (auth.isAuthenticated) {
+      return(<DevicesBox />)
+    } else {
+      return(<SignOnBox />)
     }
   }
   
@@ -61,8 +69,7 @@ function App() {
             </Col>
             
             <Col sm={7}>
-              
-              <SignOnBox />
+              {renderRootBox()}
             </Col>
             
           </Row>

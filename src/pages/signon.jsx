@@ -11,7 +11,7 @@ import JSONPretty from 'react-json-pretty';
 import JSONTheme from "../config/jsontheme";
 
 
-function SignOn() {
+function SignOnBox() {
   
   const auth = useAuth();
 
@@ -56,4 +56,4 @@ function SignOn() {
   }
 }
 
-export default SignOn;
+export default SignOnBox;
