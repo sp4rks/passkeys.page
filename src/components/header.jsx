@@ -15,14 +15,6 @@ function Header() {
 
   const auth = useAuth();
   
-  function register() {
-    auth.signinRedirect({acr_values:"8b5b60cf2699df87f9181ebb873725a7"});
-  }
-  
-  function autofill() {
-    auth.signinRedirect({acr_values:"d797638e44ab14ce1e2b95e2cf57a8ce"});
-  }
-  
   function signin() {
     auth.signinRedirect({acr_values:"1d5741ccec4b0970b6b83fc161c40056"});
   }
@@ -39,7 +31,6 @@ function Header() {
         <span>
           <div>
             <NavDropdown title={auth.user.profile.username}>
-              <NavDropdown.Item href={`https://apps.pingone.asia/${Config.envId}/myaccount/`} target="_blank">Manage Profile</NavDropdown.Item>
               <NavDropdown.Item onClick={signout}>Sign out</NavDropdown.Item>
             </NavDropdown>
           </div>

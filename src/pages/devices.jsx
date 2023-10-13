@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
 
 import { useAuth } from "react-oidc-context";
 import Row from "react-bootstrap/Row";
@@ -15,7 +14,6 @@ import JSONTheme from "../config/jsontheme";
 function SignOn() {
   
   const auth = useAuth();
-  const [devices] = useState([]);
   
   function signon() {
     auth.signinRedirect();
@@ -35,7 +33,9 @@ function SignOn() {
         </Row>
 
         <Row sm={12} className="pMiddle">
-
+          <div>
+            <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
+          </div> 
         </Row>
 
       </div>
@@ -52,9 +52,7 @@ function SignOn() {
         </Row>
 
         <Row sm={12} className="pMiddle">
-          <div>
-            <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
-          </div> 
+
         </Row>
 
       </div>
