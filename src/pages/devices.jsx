@@ -19,29 +19,42 @@ function DevicesBox() {
   
   const decodedIdToken = jwt_decode(auth.user.id_token);
   const decodedAccessToken = jwt_decode(auth.user.access_token);
-  console.log(auth.user.access_token);
+  //console.log(auth.user.access_token);
   
   useEffect(() => {
-    fetch('https://api.pingone.asia/v1/environments/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices',{
-        //'https://api.pingone.asia/v1/environments/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices'
+    
+    const request = new Request('https://api.pingone.asia/v1/environments/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices', {
       method: 'GET',
       mode: 'no-cors',
       headers: {
-        'Authorization': 'Bearer ' + auth.user.access_token}
+        'Authorization': 'Bearer ' + auth.user.access_token
       }
-    )
-    .then((response) => {
+    })
+    
+    //console.log('Request Built:')
+    //console.log(request)
+    
+    fetch(request)
+    .then(response => {
       if (!response.ok) {
-        console.log('Get Devices Failed');
-        console.log(JSON.stringify(response));
-        return ({})
+        throw new Error('Network response was not ok');
       }
       return response.json();
     })
-    .then((data) => {
-      setDevices(JSON.stringify(data))
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      if (error.response && error.response.status === 401) {
+        error.response.text().then(errorMessage => {
+          console.error('401 Unauthorized - Response Body:', errorMessage);
+        });
+      } else {
+        console.error(error);
+      }
     });
-  }, []);
+    
+  });
 
   if (auth.isAuthenticated) {
     
