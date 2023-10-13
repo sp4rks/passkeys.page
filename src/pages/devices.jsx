@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode";
 import JSONPretty from 'react-json-pretty';
 
 import JSONTheme from "../config/jsontheme";
+import Config from "../config/config"
 
 
 function DevicesBox() {
@@ -18,21 +19,19 @@ function DevicesBox() {
   const [devices, setDevices] = useState('');
   
   const decodedIdToken = jwt_decode(auth.user.id_token);
+  console.log('id_token:');
+  console.log(decodedIdToken);
+  
   const decodedAccessToken = jwt_decode(auth.user.access_token);
-  //console.log(auth.user.access_token);
   
   useEffect(() => {
     
-    const request = new Request('https://api.pingone.asia/v1/environments/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices', {
+    const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices`, {
       method: 'GET',
-      mode: 'no-cors',
       headers: {
-        'Authorization': 'Bearer ' + auth.user.access_token
+        'Authorization': `Bearer ${auth.user.access_token}`
       }
     })
-    
-    //console.log('Request Built:')
-    //console.log(request)
     
     fetch(request)
     .then(response => {
