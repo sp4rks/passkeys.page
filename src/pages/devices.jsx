@@ -19,20 +19,27 @@ function DevicesBox() {
   
   const decodedIdToken = jwt_decode(auth.user.id_token);
   const decodedAccessToken = jwt_decode(auth.user.access_token);
+  console.log(auth.user.access_token);
   
   useEffect(() => {
-    fetch('https://api.pingone.asia/v1/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices')
+    fetch('https://api.pingone.asia/v1/environments/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices',{
+        //'https://api.pingone.asia/v1/environments/21be67a7-c745-4934-b6a4-6a35c918ce6a/users/a55dcdf4-1418-4ec5-a2a6-97fd589a7058/devices'
+      method: 'GET',
+      mode: 'no-cors',
+      headers: {
+        'Authorization': 'Bearer ' + auth.user.access_token}
+      }
+    )
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        console.log('Get Devices Failed');
+        console.log(JSON.stringify(response));
+        return ({})
       }
       return response.json();
     })
     .then((data) => {
       setDevices(JSON.stringify(data))
-    })
-    .catch((error) => {
-      console.error(error);
     });
   }, []);
 
