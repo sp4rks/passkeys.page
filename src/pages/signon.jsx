@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
 
 import { useAuth } from "react-oidc-context";
 import Row from "react-bootstrap/Row";
@@ -15,8 +14,7 @@ import JSONTheme from "../config/jsontheme";
 function SignOn() {
   
   const auth = useAuth();
-  const [devices] = useState([]);
-  
+
   function signon() {
     auth.signinRedirect();
   }
@@ -30,12 +28,8 @@ function SignOn() {
       <div className="pLight">
         
         <Row sm={12}>
-          <h1>All Signed In!</h1>
-          <h5 className="text-muted">{decodedIdToken.username}</h5>
-        </Row>
-
-        <Row sm={12} className="pMiddle">
-
+          <h1>An Error Occured</h1>
+          <h5 className="text-muted">You shouldn't see this message</h5>
         </Row>
 
       </div>

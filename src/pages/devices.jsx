@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 
 import { useAuth } from "react-oidc-context";
 import Row from "react-bootstrap/Row";
@@ -14,6 +15,15 @@ import JSONTheme from "../config/jsontheme";
 function SignOn() {
   
   const auth = useAuth();
+  const [devices, setDevices] = useState([]);
+  
+  function getDevices() {
+    setDevices(['Device 1']);
+  }
+  
+  useEffect(() => {
+    alert('ran once');
+  }, []);
   
   function signon() {
     auth.signinRedirect();
@@ -47,12 +57,8 @@ function SignOn() {
       <div className="pLight">
         
         <Row sm={12}>
-          <h1>Let's Get Started</h1>
-          <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
-        </Row>
-
-        <Row sm={12} className="pMiddle">
-
+          <h1>An Error Occured</h1>
+          <h5 className="text-muted">You shouldn't see this message</h5>
         </Row>
 
       </div>

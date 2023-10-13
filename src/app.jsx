@@ -61,6 +61,7 @@ function App() {
             </Col>
             
             <Col sm={7}>
+              
               <SignOnBox />
             </Col>
             
