@@ -16,12 +16,8 @@ function ManagePasskeys() {
   
   const auth = useAuth();
   const [devices, setDevices] = useState([]);
-  
-  const decodedIdToken = jwt_decode(auth.user.id_token);
-  console.log('id_token:');
-  console.log(decodedIdToken);
-  
-  const decodedAccessToken = jwt_decode(auth.user.access_token);
+  const [decodedIdToken, setDecodedIdToken] = useState(jwt_decode(auth.user.id_token));
+  const [decodedAccessToken, setDecodedAccesstoken] = useState(jwt_decode(auth.user.access_token));
   
   useEffect(() => {
     
@@ -52,7 +48,7 @@ function ManagePasskeys() {
       }
     });
     
-  });
+  },[]);
   
   function Passkeys () {
     const deviceList = devices.map((device, index) =>
