@@ -36,6 +36,9 @@ function RootPage() {
             <p>
               If your're interested in OIDC, you can also view your tokens by selecting that option from the top navbar.
             </p>
+            <p>
+              Finally, learn more about implementing Passkeys in your environment by checking out some of our guidance.
+            </p>
           </div>
         </Col>
 

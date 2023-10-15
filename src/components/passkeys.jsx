@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import jwt_decode from "jwt-decode";
 import JSONPretty from 'react-json-pretty';
 
-
+import JSONTheme from "../config/jsontheme";
 import Config from "../config/config"
 
 
@@ -41,7 +41,7 @@ function ManagePasskeys() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
+      setDevices(data._embedded.devices);
     })
     .catch(error => {
       if (error.response && error.response.status === 401) {
@@ -55,8 +55,10 @@ function ManagePasskeys() {
     
   });
   
-  function listPasskeys () {
-    
+  function Passkeys () {
+    return devices.map(device =>
+      <p>{device.displayName}</p>
+    );
   }
 
   if (auth.isAuthenticated) {
@@ -70,7 +72,7 @@ function ManagePasskeys() {
         </Row>
 
         <Row sm={12}>
-          <p>{devices}</p>
+          <Passkeys />
         </Row>
 
       </div>
