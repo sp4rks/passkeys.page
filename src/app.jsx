@@ -48,6 +48,9 @@ function App() {
         <Route exact path="/tokens">
           <TokenPage />
         </Route>
+        <Route exact path="/loading">
+          <Loading />
+        </Route>
       </Container>
     </div>
 

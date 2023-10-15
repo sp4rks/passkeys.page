@@ -58,14 +58,15 @@ function ManagePasskeys() {
     const deviceList = devices.map((device, index) =>
       <Accordion.Item eventKey={index.toString()}>
         <Accordion.Header>{device.displayName}</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <Accordion.Body className="terminal">
+          <p>Device ID: {device.id}</p>
+          <p>Device Status: {device.status}</p>
+          <p>Device Type: {device.type}</p>
+          <p>Device Lock: {device.lock.status}</p>
+          <p>Device Block: {device.block.status}</p>
+          <p>Cross Platform?: {device.attributes.isCrossPlatform.toString()}</p>
+          <p>Backup Eligible?: {device.attributes.isCrossPlatform.toString()}</p>
+          <p>Backed Up?: {device.attributes.isCrossPlatform.toString()}</p>
         </Accordion.Body>
       </Accordion.Item>
     );
