@@ -58,3 +58,5 @@ function App() {
 }
 
 export default App;
+
+// Improve the generic error page
