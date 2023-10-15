@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
+import Form from 'react-bootstrap/Form';
 
 import jwt_decode from "jwt-decode";
 
@@ -107,6 +108,15 @@ function ManagePasskeys() {
             </Col>
 
             <Col xs={7}>
+              <Form>
+                <Form.Group>
+                  <Form.Control idclassName="form-control-lg" type="text" placeholder={device.displayName} />
+
+                </Form.Group>
+              </Form>
+              
+              <br/>
+              
               <div className="d-grid gap-2">
                 <Button className="renameButton" size="lg">
                   Rename Device
