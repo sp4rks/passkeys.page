@@ -42,9 +42,9 @@ function TokenPage() {
               The tokens used for this are over on the right there. If you're new to OIDC, check out the links below to learn more about it.
             </p>
             <p>
-              <a target=”_blank” href="https://www.pingidentity.com/en/resources/identity-fundamentals/authentication-authorization-standards/openid-connect.html">OIDC Primer</a><br/>
-              <a target=”_blank” href="https://docs.pingidentity.com/r/en-us/developer/dev_openid_1_about">Developers Guide</a><br/>
-              <a target=”_blank” href="https://github.com/pingidentity-developers-experience/ping-oidc-client-sdk">Ping Identity OIDC SDK</a><br/>
+              <a target="_blank" href="https://www.pingidentity.com/en/resources/identity-fundamentals/authentication-authorization-standards/openid-connect.html">OIDC Primer</a><br/>
+              <a target="_blank" href="https://docs.pingidentity.com/r/en-us/developer/dev_openid_1_about">Developers Guide</a><br/>
+              <a target="_blank" href="https://github.com/pingidentity-developers-experience/ping-oidc-client-sdk">Ping Identity OIDC SDK</a><br/>
             </p>
           </div>
         </Col>
