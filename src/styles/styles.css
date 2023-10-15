@@ -56,6 +56,10 @@ button.nav-link {
   color: black;
 }
 
+a.nav-link {
+  color: white;
+}
+
 button.nav-link:hover {
   color: grey;
 }
@@ -139,4 +143,15 @@ button.pJumboButton:active {
   font-family: monospace;
   font-size: .85em;
   overflow-wrap: break-word;
+}
+
+.navbarButton {
+  background-color: transparent;
+  border-color: white;
+}
+
+.navbarButton:hover {
+  background-color: white;
+  border-color: white;
+  color: #051727;
 }

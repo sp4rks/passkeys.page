@@ -20,34 +20,24 @@ function Header() {
     auth.signoutRedirect({post_logout_redirect_uri:`https://${Config.projectName}.glitch.me/`});
   }
   
-  function User() {
-
+  function AuthenticatedNavbar () {
     if (auth.isAuthenticated) {
-      return (
-        <span>
-          <div>
-            <NavDropdown title={auth.user.profile.username}>
-              <NavDropdown.Item onClick={signout}>Sign out</NavDropdown.Item>
-            </NavDropdown>
-          </div>
-        </span>
+      return(
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Link href="/" className="nav-link">Home</Link>
+            <Link href="/tokens" className="nav-link">Tokens</Link>
+          </Nav>
+          <Nav>
+            <Button onClick={signout} className="navbarButton">Sign Out</Button>
+          </Nav>          
+        </Navbar.Collapse>
       );
     } else {
-      return (
-        <div>
-          
-        </div>
-      );
-    }
-
-  }
-  
-  function Avatar() {
-    if (auth.isAuthenticated && auth.user.profile.avatar) {
-      return(<img height="46px" src={auth.user.profile.avatar} />);
+      return(null);
     }
   }
-  
+    
   return (
     <Navbar variant="dark" bg="dark" fixed="top">
       <Container>
@@ -60,16 +50,7 @@ function Header() {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            
-            <Link href="/" className="nav-link">Home</Link>
-            <Link href="/tokens" className="nav-link">Tokens</Link>
-          </Nav>
-          <Nav>
-            <Button onClick={signout}>Sign Out</Button>
-          </Nav>          
-        </Navbar.Collapse>
+        <AuthenticatedNavbar />
       </Container>
     </Navbar>
   );
