@@ -68,16 +68,11 @@ function ManagePasskeys() {
     );*/
     
     const deviceList = devices.map((device, index) =>
-      <Accordion.Item key ={index} eventKey={index}>
+       <Accordion.Item key ={index} eventKey={index}>
         <Accordion.Header>{device.displayName}</Accordion.Header>
         <Accordion.Body>
+          <Col xs={5}>
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Device ID</div>
-                {device.id}
-              </div>
-            </li>
 
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
@@ -110,18 +105,19 @@ function ManagePasskeys() {
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
                 <div class="fw-bold">Backup Eligible?</div>
-                {device.attributes.isCrossPlatform.toString()}
+                {device.backup.backupEligibility.toString()}
               </div>
             </li>
             
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
                 <div class="fw-bold">Backed Up?</div>
-                {device.attributes.isCrossPlatform.toString()}
+                {device.backup.backupState.toString()}
               </div>
             </li>         
             
           </ul>
+          </Col>
         </Accordion.Body>
       </Accordion.Item>
     );
@@ -138,12 +134,12 @@ function ManagePasskeys() {
     return (
       <div className="pLight">
         
-        <Row sm={12} className="pRight">
+        <Row className="pRight">
           <h1>Your Passkeys</h1>
           <h5 className="text-muted">{decodedIdToken.username}</h5>
         </Row>
 
-        <Row sm={12}>
+        <Row>
           <Passkeys />
         </Row>
 
@@ -155,7 +151,7 @@ function ManagePasskeys() {
     return (
       <div className="pLight">
         
-        <Row sm={12}>
+        <Row>
           <h1>An Error Occured</h1>
           <h5 className="text-muted">You shouldn't see this message</h5>
         </Row>
