@@ -52,6 +52,14 @@ nav.bg-dark {
  background-color: rgb(5, 23, 39) !important; 
 }
 
+button.nav-link {
+  color: black;
+}
+
+button.nav-link:hover {
+  color: grey;
+}
+
 /* Page Specific Styles */
 
 div.pMain {

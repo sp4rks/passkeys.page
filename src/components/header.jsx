@@ -15,10 +15,6 @@ function Header() {
 
   const auth = useAuth();
   
-  function signin() {
-    auth.signinRedirect({acr_values:"1d5741ccec4b0970b6b83fc161c40056"});
-  }
-  
   function signout() {
     auth.removeUser();
     auth.signoutRedirect({post_logout_redirect_uri:`https://${Config.projectName}.glitch.me/`});
@@ -66,10 +62,12 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            
+            <Link href="/" className="nav-link">Home</Link>
+            <Link href="/tokens" className="nav-link">Tokens</Link>
           </Nav>
           <Nav>
-            <Avatar />
-            <User />
+            <Button onClick={signout}>Sign Out</Button>
           </Nav>          
         </Navbar.Collapse>
       </Container>
