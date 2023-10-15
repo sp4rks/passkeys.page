@@ -51,21 +51,6 @@ function ManagePasskeys() {
   },[]);
   
   function Passkeys () {
-    /*const deviceList = devices.map((device, index) =>
-      <Accordion.Item key ={index} eventKey={index}>
-        <Accordion.Header>{device.displayName}</Accordion.Header>
-        <Accordion.Body className="terminal">
-          <p>Device ID: {device.id}</p>
-          <p>Device Status: {device.status}</p>
-          <p>Device Type: {device.type}</p>
-          <p>Device Lock: {device.lock.status}</p>
-          <p>Device Block: {device.block.status}</p>
-          <p>Cross Platform?: {device.attributes.isCrossPlatform.toString()}</p>
-          <p>Backup Eligible?: {device.attributes.isCrossPlatform.toString()}</p>
-          <p>Backed Up?: {device.attributes.isCrossPlatform.toString()}</p>
-        </Accordion.Body>
-      </Accordion.Item>
-    );*/
     
     const deviceList = devices.map((device, index) =>
        <Accordion.Item key ={index} eventKey={index}>
@@ -79,42 +64,42 @@ function ManagePasskeys() {
                 <li className="list-group-item d-flex justify-content-between align-items-start">
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">Device Status</div>
-                    <div>{device.status}</div>
+                    <div>{device.status.toUpperCase()}</div>
                   </div>
                 </li>
 
                 <li className="list-group-item d-flex justify-content-between align-items-start">
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">Device Lock</div>
-                    {device.lock.status}
+                    {device.lock.status.toUpperCase()}
                   </div>
                 </li>
 
                 <li className="list-group-item d-flex justify-content-between align-items-start">
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">Device Block</div>
-                    {device.block.status}
+                    {device.block.status.toUpperCase()}
                   </div>
                 </li>
 
                 <li className="list-group-item d-flex justify-content-between align-items-start">
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">Cross Platform?</div>
-                    {device.attributes.isCrossPlatform.toString()}
+                    {device.attributes.isCrossPlatform.toString().toUpperCase()}
                   </div>
                 </li>
 
                 <li className="list-group-item d-flex justify-content-between align-items-start">
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">Backup Eligible?</div>
-                    {device.backup.backupEligibility.toString()}
+                    {device.backup.backupEligibility.toString().toUpperCase()}
                   </div>
                 </li>
 
                 <li className="list-group-item d-flex justify-content-between align-items-start">
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">Backed Up?</div>
-                    {device.backup.backupState.toString()}
+                    {device.backup.backupState.toString().toUpperCase()}
                   </div>
                 </li>         
 
@@ -123,10 +108,10 @@ function ManagePasskeys() {
 
             <Col xs={7}>
               <div className="d-grid gap-2">
-                <Button variant="info" size="lg">
+                <Button className="renameButton" size="lg">
                   Rename Device
                 </Button>
-                <Button variant="danger" size="lg">
+                <Button className="deleteButton" size="lg">
                   Delete Device
                 </Button>
               </div>

@@ -182,3 +182,27 @@ button.pJumboButton:active {
   border-color: white;
   color: #051727;
 }
+
+button.renameButton {
+  border-color: black;
+  background-color: transparent;
+  color: black;
+}
+
+button.renameButton:hover {
+  border-color: grey;
+  background-color: grey;
+  color: white;
+}
+
+button.deleteButton {
+  background-color: #B3282D;
+  color: white;
+  border-color: #B3282D;
+}
+
+button.deleteButton:hover {
+  background-color: #8F2427;
+  color: white;
+  border-color: #B3282D;
+}
