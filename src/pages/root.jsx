@@ -29,14 +29,12 @@ function RootPage() {
 
         <Col sm={5}>
           <div className="pHighlight">
-            <h1>And Here We Are</h1>
+            <h1>You're Signed On!</h1>
             <p>
-              Based on FIDO standards, passkeys are a replacement for passwords that provide faster,
-              easier, and more secure sign-ins to websites and apps across a user’s devices.
-              Unlike passwords, passkeys are always strong and phishing-resistant.
+              You can manage your devices in the right pane, including add, remove and rename.
             </p>
             <p>
-              Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices, and even work on other devices within physical proximity.
+              If your're interested in OIDC, you can also view your tokens by selecting that option from the top navbar.
             </p>
           </div>
         </Col>
@@ -63,7 +61,8 @@ function RootPage() {
               Unlike passwords, passkeys are always strong and phishing-resistant.
             </p>
             <p>
-              Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices, and even work on other devices within physical proximity.
+              Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices,
+              and even work on other devices within physical proximity.
             </p>
           </div>
         </Col>
