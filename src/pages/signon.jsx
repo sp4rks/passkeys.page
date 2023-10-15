@@ -38,20 +38,7 @@ function SignOnBox() {
   } else {
     
     return (
-      <div className="pLight pRight">
-        
-        <Row sm={12}>
-          <h1>Let's Get Started</h1>
-          <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
-        </Row>
 
-        <Row sm={12} className="pMiddle">
-          <div>
-            <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
-          </div> 
-        </Row>
-
-      </div>
     );
   }
 }
