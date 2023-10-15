@@ -51,7 +51,7 @@ function ManagePasskeys() {
   },[]);
   
   function Passkeys () {
-    const deviceList = devices.map((device, index) =>
+    /*const deviceList = devices.map((device, index) =>
       <Accordion.Item key ={index} eventKey={index}>
         <Accordion.Header>{device.displayName}</Accordion.Header>
         <Accordion.Body className="terminal">
@@ -63,6 +63,65 @@ function ManagePasskeys() {
           <p>Cross Platform?: {device.attributes.isCrossPlatform.toString()}</p>
           <p>Backup Eligible?: {device.attributes.isCrossPlatform.toString()}</p>
           <p>Backed Up?: {device.attributes.isCrossPlatform.toString()}</p>
+        </Accordion.Body>
+      </Accordion.Item>
+    );*/
+    
+    const deviceList = devices.map((device, index) =>
+      <Accordion.Item key ={index} eventKey={index}>
+        <Accordion.Header>{device.displayName}</Accordion.Header>
+        <Accordion.Body>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Device ID</div>
+                {device.id}
+              </div>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Device Status</div>
+                {device.status}
+              </div>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Device Lock</div>
+                {device.lock.status}
+              </div>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Device Block</div>
+                {device.block.status}
+              </div>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Cross Platform?</div>
+                {device.attributes.isCrossPlatform.toString()}
+              </div>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Backup Eligible?</div>
+                {device.attributes.isCrossPlatform.toString()}
+              </div>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Backed Up?</div>
+                {device.attributes.isCrossPlatform.toString()}
+              </div>
+            </li>         
+            
+          </ul>
         </Accordion.Body>
       </Accordion.Item>
     );
