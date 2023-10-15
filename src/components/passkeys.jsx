@@ -9,14 +9,14 @@ import Button from 'react-bootstrap/Button';
 import jwt_decode from "jwt-decode";
 import JSONPretty from 'react-json-pretty';
 
-import JSONTheme from "../config/jsontheme";
+
 import Config from "../config/config"
 
 
 function ManagePasskeys() {
   
   const auth = useAuth();
-  const [devices, setDevices] = useState('');
+  const [devices, setDevices] = useState([]);
   
   const decodedIdToken = jwt_decode(auth.user.id_token);
   console.log('id_token:');
