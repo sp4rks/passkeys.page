@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState } from 'react';
 
-
 import { useAuth } from "react-oidc-context";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,7 +8,9 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 import jwt_decode from "jwt-decode";
+import JSONPretty from 'react-json-pretty';
 
+import JSONTheme from "../config/jsontheme";
 import ErrorBox from "../components/error.jsx";
 
 
@@ -49,25 +50,35 @@ function TokenPage() {
         </Col>
 
         <Col sm={7}>
-          <div className="pLight pRight">
+          <div className="pLight">
 
             <Row sm={12}>
-              <h1>Tokens</h1>
+              <h1 className="pRight">Tokens</h1>
                 <Tabs
                 id="tokenTabs"
                 activeKey={key}
                 onSelect={(k) => setKey(k)}
                 className="mb-3"
                 >
-                <Tab eventKey="home" title="Home">
-                Tab content for Home
-                </Tab>
-                <Tab eventKey="profile" title="Profile">
-                Tab content for Profile
-                </Tab>
-                <Tab eventKey="contact" title="Contact" disabled>
-                Tab content for Contact
-                </Tab>
+                  <Tab eventKey="idToken" title="ID Token">
+                    <JSONPretty
+                      data={decodedIdToken}
+                      theme={JSONTheme}
+                      style={{fontSize: ".85em"}}
+                    />
+                  </Tab>
+                  <Tab eventKey="accessToken" title="Access Token">
+                    <JSONPretty
+                      data={decodedAccessToken}
+                      theme={JSONTheme}
+                      style={{fontSize: ".85em"}}
+                    />
+                  </Tab>
+                  <Tab eventKey="rawAccessToken" title="Raw Access Token">
+                    <p className="rawToken">
+                      {auth.user.access_token}
+                    </p>
+                  </Tab>
                 </Tabs>
             </Row>
 

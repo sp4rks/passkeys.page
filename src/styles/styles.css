@@ -127,3 +127,8 @@ button.pJumboButton:active {
   border-radius: 0;
 }
 
+.rawToken {
+  font-family: monospace;
+  font-size: .85em;
+  overflow-wrap: break-word;
+}
