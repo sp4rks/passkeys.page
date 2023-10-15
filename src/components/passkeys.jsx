@@ -71,53 +71,69 @@ function ManagePasskeys() {
        <Accordion.Item key ={index} eventKey={index}>
         <Accordion.Header>{device.displayName}</Accordion.Header>
         <Accordion.Body>
-          <Col xs={5}>
-          <ul class="list-group">
+          <Row>
+            
+            <Col xs={5}>
+              <ul className="list-group">
 
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Device Status</div>
-                {device.status}
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Device Status</div>
+                    <div>{device.status}</div>
+                  </div>
+                </li>
+
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Device Lock</div>
+                    {device.lock.status}
+                  </div>
+                </li>
+
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Device Block</div>
+                    {device.block.status}
+                  </div>
+                </li>
+
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Cross Platform?</div>
+                    {device.attributes.isCrossPlatform.toString()}
+                  </div>
+                </li>
+
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Backup Eligible?</div>
+                    {device.backup.backupEligibility.toString()}
+                  </div>
+                </li>
+
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Backed Up?</div>
+                    {device.backup.backupState.toString()}
+                  </div>
+                </li>         
+
+              </ul>
+            </Col>
+
+            <Col xs={7}>
+              <div className="d-grid gap-2">
+                <Button variant="info" size="lg">
+                  Rename Device
+                </Button>
+                <Button variant="danger" size="lg">
+                  Delete Device
+                </Button>
               </div>
-            </li>
+            </Col>
             
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Device Lock</div>
-                {device.lock.status}
-              </div>
-            </li>
-            
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Device Block</div>
-                {device.block.status}
-              </div>
-            </li>
-            
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Cross Platform?</div>
-                {device.attributes.isCrossPlatform.toString()}
-              </div>
-            </li>
-            
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Backup Eligible?</div>
-                {device.backup.backupEligibility.toString()}
-              </div>
-            </li>
-            
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">Backed Up?</div>
-                {device.backup.backupState.toString()}
-              </div>
-            </li>         
-            
-          </ul>
-          </Col>
+          </Row>
+          
         </Accordion.Body>
       </Accordion.Item>
     );
