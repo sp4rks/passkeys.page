@@ -5,11 +5,10 @@ import { useAuth } from "react-oidc-context";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
+import Accordion from 'react-bootstrap/Accordion';
 
 import jwt_decode from "jwt-decode";
-import JSONPretty from 'react-json-pretty';
 
-import JSONTheme from "../config/jsontheme";
 import Config from "../config/config"
 
 
@@ -56,8 +55,25 @@ function ManagePasskeys() {
   });
   
   function Passkeys () {
-    return devices.map(device =>
-      <p>{device.displayName}</p>
+    const deviceList = devices.map((device, index) =>
+      <Accordion.Item eventKey={index.toString()}>
+        <Accordion.Header>{device.displayName}</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+    );
+    
+    return (
+      <Accordion defaultActiveKey="0">
+        {deviceList}
+      </Accordion>
     );
   }
 
@@ -66,7 +82,7 @@ function ManagePasskeys() {
     return (
       <div className="pLight">
         
-        <Row sm={12}>
+        <Row sm={12} className="pRight">
           <h1>Your Passkeys</h1>
           <h5 className="text-muted">{decodedIdToken.username}</h5>
         </Row>
