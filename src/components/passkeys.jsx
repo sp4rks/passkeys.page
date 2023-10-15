@@ -13,7 +13,7 @@ import JSONTheme from "../config/jsontheme";
 import Config from "../config/config"
 
 
-function PasskeyBox() {
+function ManagePasskeys() {
   
   const auth = useAuth();
   const [devices, setDevices] = useState('');
@@ -91,4 +91,4 @@ function PasskeyBox() {
   }
 }
 
-export default PasskeyBox;
+export default ManagePasskeys;

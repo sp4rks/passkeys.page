@@ -12,8 +12,7 @@ import { Route } from "wouter";
 
 import Header from "./components/header";
 import Loading from "./components/loading";
-import SignOnBox from "./pages/signon"
-import PasskeyBox from "./pages/passkeys"
+import RootPage from "./pages/root"
 
 
 function App() {
@@ -37,43 +36,13 @@ function App() {
     }
   }
   
-  function renderRootBox () {
-    if (auth.isAuthenticated) {
-      return(<PasskeyBox />)
-    } else {
-      return(<SignOnBox />)
-    }
-  }
-  
   return (
 
     <div className="pMain">
       <Header />
       <Container>
         <Route exact path="/">
-          
-          <Row>
-            
-            <Col sm={5}>
-              <div className="pHighlight">
-                <h1>Introducing Passkeys</h1>
-                <p>
-                  Based on FIDO standards, passkeys are a replacement for passwords that provide faster,
-                  easier, and more secure sign-ins to websites and apps across a user’s devices.
-                  Unlike passwords, passkeys are always strong and phishing-resistant.
-                </p>
-                <p>
-                  Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices, and even work on other devices within physical proximity.
-                </p>
-              </div>
-            </Col>
-            
-            <Col sm={7}>
-              {renderRootBox()}
-            </Col>
-            
-          </Row>
-          
+          <RootPage />
         </Route>
       </Container>
     </div>
@@ -81,7 +50,3 @@ function App() {
 }
 
 export default App;
-
-
-// SHIFT FROM PER BOX RENDERING TO PER ROUTE RENDERING
-// CONTINUE PASSKEY MANAGEMENT
