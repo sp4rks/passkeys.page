@@ -7,10 +7,10 @@ import Button from 'react-bootstrap/Button';
 
 import jwt_decode from "jwt-decode";
 
-import ManagePasskeys from "../components/passkeys.jsx";
+import ErrorBox from "../components/error.jsx";
 
 
-function RootPage() {
+function TokenPage() {
   
   const auth = useAuth();
 
@@ -31,16 +31,21 @@ function RootPage() {
           <div className="pHighlight">
             <h1>Tokens</h1>
             <p>
-              This site uses OIDC to perform user authentication.
+              This site uses OIDC to perform user authentication, and facilitate access to the PingOne device management APIs.
             </p>
             <p>
-              Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices, and even work on other devices within physical proximity.
+              The tokens used for this are over on the right there. If you're new to OIDC, check out the links below to learn more about it.
+            </p>
+            <p>
+              <a href="https://www.pingidentity.com/en/resources/identity-fundamentals/authentication-authorization-standards/openid-connect.html">OIDC Primer</a><br/>
+              <a href="https://docs.pingidentity.com/r/en-us/developer/dev_openid_1_about">Developers Guide</a><br/>
+              <a href="https://github.com/pingidentity-developers-experience/ping-oidc-client-sdk">Ping Identity OIDC SDK</a><br/>
             </p>
           </div>
         </Col>
 
         <Col sm={7}>
-          <ManagePasskeys />
+          
         </Col>
 
       </Row>
@@ -49,43 +54,9 @@ function RootPage() {
   } else {
     
     return (
-      
-      <Row>
-
-        <Col sm={5}>
-          <div className="pHighlight">
-            <h1>Introducing Passkeys</h1>
-            <p>
-              Based on FIDO standards, passkeys are a replacement for passwords that provide faster,
-              easier, and more secure sign-ins to websites and apps across a user’s devices.
-              Unlike passwords, passkeys are always strong and phishing-resistant.
-            </p>
-            <p>
-              Passkeys simplify account registration for apps and websites, are easy to use, work across most of a user’s devices, and even work on other devices within physical proximity.
-            </p>
-          </div>
-        </Col>
-
-        <Col sm={7}>
-          <div className="pLight pRight">
-
-            <Row sm={12}>
-              <h1>Let's Get Started</h1>
-              <h5 className="text-muted">Sign in below to see Passkeys in action</h5>
-            </Row>
-
-            <Row sm={12} className="pMiddle">
-              <div>
-                <Button className="pJumboButton" onClick={signon}>Sign On with Passkey</Button>
-              </div> 
-            </Row>
-
-          </div>
-        </Col>
-
-      </Row>
+      <ErrorBox />
     );
   }
 }
 
-export default RootPage;
+export default TokenPage;

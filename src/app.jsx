@@ -13,6 +13,7 @@ import { Route } from "wouter";
 import Header from "./components/header";
 import Loading from "./components/loading";
 import RootPage from "./pages/root"
+import TokenPage from "./pages/tokens"
 
 
 function App() {
@@ -44,8 +45,12 @@ function App() {
         <Route exact path="/">
           <RootPage />
         </Route>
+        <Route exact path="/tokens">
+          <TokenPage />
+        </Route>
       </Container>
     </div>
+
   );
 }
 
