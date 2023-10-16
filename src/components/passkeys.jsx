@@ -54,6 +54,8 @@ function ManagePasskeys() {
   
   function updateDeviceNickname(e) {
     
+    const deviceId = 
+    
     /*const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
       method: 'PUT',
       headers: {
@@ -61,7 +63,7 @@ function ManagePasskeys() {
       }
     })*/
     
-    console.log(JSON.stringify(e));
+    alert(e.target.getAttribute('data-deviceid'));
   }
   
   function Passkeys () {
@@ -129,7 +131,7 @@ function ManagePasskeys() {
                 <br/>
 
                 <div className="d-grid gap-2">
-                  <Button className="renameButton" data-deviceid={device.id} size="lg">
+                  <Button className="renameButton" data-deviceid={device.id} size="lg" onClick={updateDeviceNickname}>
                     Rename Device
                   </Button>
                   <Button className="deleteButton" size="lg">
