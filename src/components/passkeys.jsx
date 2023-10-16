@@ -51,6 +51,18 @@ function ManagePasskeys() {
     
   },[]);
   
+  
+  function updateDeviceNickname () {
+    
+    const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${auth.user.access_token}`
+      }
+    })
+    
+  }
+  
   function Passkeys () {
     
     const deviceList = devices.map((device, index) =>
@@ -110,8 +122,7 @@ function ManagePasskeys() {
             <Col xs={7}>
               <Form>
                 <Form.Group>
-                  <Form.Control idclassName="form-control-lg" type="text" placeholder={device.displayName} />
-
+                  <Form.Control id="newDeviceName" className="form-control-lg" type="text" placeholder={device.displayName} />
                 </Form.Group>
               </Form>
               
