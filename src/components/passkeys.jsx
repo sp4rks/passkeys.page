@@ -61,7 +61,7 @@ function ManagePasskeys() {
       }
     })*/
     
-    alert(e);
+    console.log(JSON.stringify(e));
   }
   
   function Passkeys () {
@@ -129,7 +129,7 @@ function ManagePasskeys() {
                 <br/>
 
                 <div className="d-grid gap-2">
-                  <Button className="renameButton" data-deviceid={device.id} size="lg" onClick={((e) => this.handleClick(e, data))}>
+                  <Button className="renameButton" data-deviceid={device.id} size="lg" onClick={updateDeviceNickname}>
                     Rename Device
                   </Button>
                   <Button className="deleteButton" size="lg">
