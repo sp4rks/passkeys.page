@@ -52,15 +52,16 @@ function ManagePasskeys() {
   },[]);
   
   
-  function updateDeviceNickname () {
+  function updateDeviceNickname(e) {
     
-    const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
+    /*const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${auth.user.access_token}`
       }
-    })
+    })*/
     
+    alert(e);
   }
   
   function Passkeys () {
@@ -124,18 +125,20 @@ function ManagePasskeys() {
                 <Form.Group>
                   <Form.Control id={device.id} className="form-control-lg" type="text" placeholder={device.displayName} />
                 </Form.Group>
+                
+                <br/>
+
+                <div className="d-grid gap-2">
+                  <Button className="renameButton" data-deviceid={device.id} size="lg" onClick={((e) => this.handleClick(e, data))}>
+                    Rename Device
+                  </Button>
+                  <Button className="deleteButton" size="lg">
+                    Delete Device
+                  </Button>
+                </div>
               </Form>
               
-              <br/>
-              
-              <div className="d-grid gap-2">
-                <Button className="renameButton" size="lg">
-                  Rename Device
-                </Button>
-                <Button className="deleteButton" size="lg">
-                  Delete Device
-                </Button>
-              </div>
+
             </Col>
             
           </Row>
