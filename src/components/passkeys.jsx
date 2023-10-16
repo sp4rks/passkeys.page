@@ -129,7 +129,7 @@ function ManagePasskeys() {
                 <br/>
 
                 <div className="d-grid gap-2">
-                  <Button className="renameButton" data-deviceid={device.id} size="lg" onClick={updateDeviceNickname}>
+                  <Button className="renameButton" data-deviceid={device.id} size="lg">
                     Rename Device
                   </Button>
                   <Button className="deleteButton" size="lg">
