@@ -122,7 +122,7 @@ function ManagePasskeys() {
             <Col xs={7}>
               <Form>
                 <Form.Group>
-                  <Form.Control id="newDeviceName" className="form-control-lg" type="text" placeholder={device.displayName} />
+                  <Form.Control id={device.id} className="form-control-lg" type="text" placeholder={device.displayName} />
                 </Form.Group>
               </Form>
               
