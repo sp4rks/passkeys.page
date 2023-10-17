@@ -20,6 +20,8 @@ function ManagePasskeys() {
   const [decodedIdToken, setDecodedIdToken] = useState(jwt_decode(auth.user.id_token));
   const [decodedAccessToken, setDecodedAccesstoken] = useState(jwt_decode(auth.user.access_token));
   
+  const [updateCount, setUpdateCount] = useState(0);
+  
   useEffect(() => {
     
     const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices`, {
@@ -49,7 +51,7 @@ function ManagePasskeys() {
       }
     });
     
-  },[]);
+  },[updateCount]);
   
   
   function updateDeviceNickname(e) {
@@ -76,7 +78,7 @@ function ManagePasskeys() {
       return response.json();
     })
     .then(data => {
-      setDevices(data._embedded.devices);
+      setUpdateCount(updateCount + 1);
     })
     .catch(error => {
       if (error.response && error.response.status === 401) {
@@ -92,7 +94,7 @@ function ManagePasskeys() {
   function Passkeys () {
     
     const deviceList = devices.map((device, index) =>
-       <Accordion.Item key ={index} eventKey={index}>
+       <Accordion.Item eventKey={index}>
         {device.nickname ? <Accordion.Header>{device.nickname}</Accordion.Header> : <Accordion.Header>{device.displayName}</Accordion.Header>}
         <Accordion.Body>
           <Row>
@@ -173,7 +175,7 @@ function ManagePasskeys() {
     );
     
     return (
-      <Accordion defaultActiveKey="0">
+      <Accordion>
         {deviceList}
       </Accordion>
     );
