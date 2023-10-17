@@ -94,7 +94,7 @@ function ManagePasskeys() {
   function Passkeys () {
     
     const deviceList = devices.map((device, index) =>
-       <Accordion.Item eventKey={index}>
+       <Accordion.Item key={index} eventKey={index}>
         {device.nickname ? <Accordion.Header>{device.nickname}</Accordion.Header> : <Accordion.Header>{device.displayName}</Accordion.Header>}
         <Accordion.Body>
           <Row>
