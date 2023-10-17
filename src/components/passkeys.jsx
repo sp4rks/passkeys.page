@@ -32,7 +32,7 @@ function ManagePasskeys() {
     fetch(request)
     .then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Request failed.');
       }
       return response.json();
     })
@@ -55,15 +55,37 @@ function ManagePasskeys() {
   function updateDeviceNickname(e) {
     
     const deviceId = e.target.getAttribute('data-deviceid');
+    const deviceName = "test1";
     
-    /*const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
+    const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${auth.user.access_token}`
+      },
+      body: {
+        "nickname": deviceName
       }
-    })*/
+    });
     
-    alert(e.target.getAttribute('data-deviceid'));
+    fetch(request)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Request failed.');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setDevices(data._embedded.devices);
+    })
+    .catch(error => {
+      if (error.response && error.response.status === 401) {
+        error.response.text().then(errorMessage => {
+          console.error('401 Unauthorized - Response Body:', errorMessage);
+        });
+      } else {
+        console.error(error);
+      }
+    });
   }
   
   function Passkeys () {
