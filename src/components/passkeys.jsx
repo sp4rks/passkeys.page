@@ -55,15 +55,18 @@ function ManagePasskeys() {
   function updateDeviceNickname(e) {
     
     const deviceId = e.target.getAttribute('data-deviceid');
-    const deviceName = "test1";
+    const newDeviceName = document.getElementById(deviceId).value;
     
     const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${auth.user.access_token}`
       },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: {
-        "nickname": deviceName
+        "nickname": newDeviceName
       }
     });
     
@@ -92,7 +95,7 @@ function ManagePasskeys() {
     
     const deviceList = devices.map((device, index) =>
        <Accordion.Item key ={index} eventKey={index}>
-        <Accordion.Header>{device.nickname ? {device.nickname} : {device.displayName}</span>}</Accordion.Header>
+        {device.nickname ? <Accordion.Header>{device.nickname}</Accordion.Header> : <Accordion.Header>{device.displayName}</Accordion.Header>}
         <Accordion.Body>
           <Row>
             
@@ -147,7 +150,7 @@ function ManagePasskeys() {
             <Col xs={7}>
               <Form>
                 <Form.Group>
-                  <Form.Control id={device.id} className="form-control-lg" type="text" placeholder={device.displayName} />
+                  <Form.Control id={device.id} className="form-control-lg" type="text" placeholder={device.nickname ? device.nickname:device.displayName} />
                 </Form.Group>
                 
                 <br/>
