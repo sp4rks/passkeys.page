@@ -60,16 +60,15 @@ function ManagePasskeys() {
     const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${auth.user.access_token}`
+        'Authorization': `Bearer ${auth.user.access_token}`,
+        'Content-Type': 'application/json'
       },
-      body: {
+      body: JSON.stringify({
         "nickname": newDeviceName
-      }
+      })
     });
     
-    
-    /*fetch(request)
+    fetch(request)
     .then(response => {
       if (!response.ok) {
         throw new Error('Request failed.');
@@ -87,7 +86,7 @@ function ManagePasskeys() {
       } else {
         console.error(error);
       }
-    });/*
+    });
   }
   
   function Passkeys () {
