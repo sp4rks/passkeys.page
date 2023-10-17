@@ -54,7 +54,7 @@ function ManagePasskeys() {
   
   function updateDeviceNickname(e) {
     
-    const deviceId = 
+    const deviceId = e.target.getAttribute('data-deviceid');
     
     /*const request = new Request(`https://api.pingone.asia/v1/environments/${Config.envId}/users/${decodedIdToken.sub}/devices/${deviceId}/nickname`, {
       method: 'PUT',
