@@ -206,3 +206,11 @@ button.deleteButton:hover {
   color: white;
   border-color: #B3282D;
 }
+
+p.version {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 15px;
+  color: darkslategray;
+}

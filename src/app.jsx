@@ -52,6 +52,7 @@ function App() {
           <Loading />
         </Route>
       </Container>
+      <p className="version">{process.env.REACT_APP_VERSION}</p>
     </div>
 
   );

@@ -4,7 +4,6 @@ import { useAuth } from "react-oidc-context";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
-import { NavDropdown } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Link } from "wouter";
 
@@ -17,7 +16,7 @@ function Header() {
   
   function signout() {
     auth.removeUser();
-    auth.signoutRedirect({post_logout_redirect_uri:`https://${Config.projectName}.glitch.me/`});
+    auth.signoutRedirect({post_logout_redirect_uri: Config.signoutRedirectURI});
   }
   
   function AuthenticatedNavbar () {

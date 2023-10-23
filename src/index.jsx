@@ -7,8 +7,6 @@ import { Navbar } from "react-bootstrap";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import App from "./app"
-
-
 import Config from "./config/config";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
